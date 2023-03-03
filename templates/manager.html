@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>FlaskApp</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+table, th, td {
+  border:1px solid black;
+}
+</style>
+</head>
+<body>
+<center>
+<h1>Добро пожаловать в личный кабинет, господин!</h1>
+
+<h2>Список логинов и паролей</h2>
+
+<table style="width:50%">
+  <tr>
+    <th>№</th>
+    <th>LOGIN</th>
+    <th>PASSWORD</th>
+  </tr>
+  {%for i in user_data%}
+    <tr>
+    <td>{{i.id}}</td>
+    <td>{{i.login}}</td>
+    <td>{{i.password}}</td>
+        <td><form method="post" action="{{ url_for('delete_login') }}"><input type="hidden" name="id" value="{{i.id}}">
+            <input type="submit" value="Удалить"></form></td>
+  </tr>
+    {%endfor%}
+</table>
+
+<p></p>
+
+<form method="post" action="{{ url_for('create_logins') }}">
+   <legend>Создать нового пользователя:</legend>
+  <label for="login">Задать логин:</label>
+  <input type="text" id="login" name="login">
+  <label for="password">Задать пароль:</label>
+  <input type="text" id="password" name="password">
+    <br>
+  <input type="submit" value="Отправить">
+</form>
+
+<p>Планы и отчёты</p>
+<table style="width:50%">
+  <tr>
+    <th>id</th>
+    <th>project</th>
+    <th>week</th>
+    <th>day</th>
+    <th>plan_fact</th>
+    <th>spendings</th>
+    <th>sum_of_spendings</th>
+    <th>notation</th>
+    <th>created_at</th>
+  </tr>
+  {%for i in main_data%}
+    <tr>
+    <td>{{i.id}}</td>
+    <td>{{i.project}}</td>
+    <td>{{i.week}}</td>
+    <td>{{i.day}}</td>
+    <td>{{i.plan_fact}}</td>
+    <td>{{i.spendings}}</td>
+    <td>{{i.sum_of_spendings}}</td>
+    <td>{{i.notation}}</td>
+    <td>{{i.created_at}}</td>
+        <td><form method="post" action="{{ url_for('edit_data') }}"><input type="hidden" name="id" value="{{i.id}}">
+            <input type="submit" value="Изменить"></form>
+
+            <form method="post" action="{{ url_for('delete_data') }}"><input type="hidden" name="id" value="{{i.id}}">
+            <input type="submit" value="Удалить"></form></td>
+  </tr>
+    {%endfor%}
+</table>
+<br>
+
+    {% if plan_sum %}
+        <p>За неделю {{ week_summary }} по проекту {{ project }} было запланировано расходов на {{ plan_sum }}.</p>
+    {% endif %}
+    {% if fact_sum %}
+       <p> Фактически потрачено: {{ fact_sum }}</p>
+{% endif %}
+<br>
+<form method="post" action="{{ url_for('week_summary') }}">
+   <legend>Создать отчёт для руководителя</legend>
+                        <label for="project">Проект:</label>
+  <input list="projects" name="project" id="project">
+    <datalist id="projects">
+      <option value="Mantera">
+      <option value="Красная поляна">
+      <option value="Санаторий Знание">
+      <option value="Морпорт">
+      <option value="Аэропорт">
+    </datalist>
+
+  <label for="week_summary">Создать отчет за неделю:</label>
+  <input list="week" name="week_summary" required>
+{#    name должен совпадать с request.form.get#}
+
+    <datalist id="week">
+      <option value="02.01 - 07.01">
+      <option value="09.01 - 13.01">
+      <option value="16.01 - 20.01">
+      <option value="23.01 - 27.01">
+    </datalist>
+      <input type="submit" value="Создать">
+</form>
+<br>
+<form method="post" action="{{ url_for('month_summary') }}">
+     <label for="project">Проект:</label>
+      <input list="projects" name="project" id="project">
+    <datalist id="projects">
+      <option value="Mantera">
+      <option value="Красная поляна">
+      <option value="Санаторий Знание">
+      <option value="Морпорт">
+      <option value="Аэропорт">
+    </datalist>
+    <label for="password">Создать отчет за месяц:</label>
+  <input list="month" name="month_summary" required>
+
+ <datalist id="month">
+      <option value="январь">
+      <option value="февраль">
+      <option value="март">
+      <option value="апрель">
+    </datalist>
+  <input type="submit" value="Создать">
+
+</form>
+
+
+<form>
+
+
+</form>
+
+
+</center>
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>FlaskApp</title>
+        <script>
+      function addInputField() {
+        var input = document.createElement("input");
+        input.type = "text";
+        document.body.appendChild(input);
+      }
+    </script>
+
+
+    <link rel="stylesheet" type="'text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+<center>
+<h1>Добро пожаловать в личный кабинет</h1>
+        <button onclick="addInputField()">Add Input Field</button>
+<form  method="post">
+
+    <br>
+<input type="hidden" name="project" value="{{ project }}">
+    <input type="hidden" name="week" value="{{ week }}">
+
+
+ <fieldset>
+  <legend>Понедельник:</legend>
+
+  <br><br>
+<div class="wrapper">
+    <div id="survey_options">
+      <input type="text" name="survey_options[]" class="survey_options" size="50" placeholder="Name">
+      <input type="text" name="survey_options[]" class="survey_options" size="50" placeholder="Email">
+      <input type="text" name="survey_options[]" class="survey_options" size="50" placeholder="Another Field">
+    </div>
+    <div class="controls">
+      <a href="#" id="add_more_fields"><i class="fa fa-plus"></i>Add More</a>
+      <a href="#" id="remove_fields"><i class="fa fa-plus"></i>Remove Field</a>
+    </div>
+  </div>
+     <script src="{{ url_for('static', filename='javascript/script.js') }}"></script>
+
+ </fieldset>
+
+        <fieldset>
+  <legend>Понедельник:</legend>
+  <label for="type_of_spendings">Статья расходов:</label>
+  <input type="text" id="type_of_spendings" name="type_of_spendings_1_1">
+  <label for="spendings">Сумма расходов:</label>
+  <input type="number" id="spendings" name="spendings_1_1"><br><br>
+  <label for="type_of_spendings">Статья расходов:</label>
+  <input type="text" id="type_of_spendings" name="type_of_spendings_1_2">
+  <label for="spendings">Сумма расходов:</label>
+  <input type="number" id="spendings" name="spendings_1_2"><br><br>
+  <label for="type_of_spendings">Статья расходов:</label>
+  <input type="text" id="type_of_spendings" name="type_of_spendings_1_3">
+  <label for="spendings">Сумма расходов:</label>
+  <input type="number" id="spendings" name="spendings_1_3"><br><br>
+
+ </fieldset>
+
+
+    <fieldset>
+  <legend>Вторник:</legend>
+  <label for="type_of_spendings">Статья расходов:</label>
+  <input type="text" id="type_of_spendings" name="type_of_spendings_2_1">
+  <label for="spendings">Сумма расходов:</label>
+  <input type="number" id="spendings" name="spendings_2_1"><br><br>
+  <label for="type_of_spendings">Статья расходов:</label>
+  <input type="text" id="type_of_spendings" name="type_of_spendings_2_2">
+  <label for="spendings">Сумма расходов:</label>
+  <input type="number" id="spendings" name="spendings_2_2"><br><br>
+  <label for="type_of_spendings">Статья расходов:</label>
+  <input type="text" id="type_of_spendings" name="type_of_spendings_2_3">
+  <label for="spendings">Сумма расходов:</label>
+  <input type="number" id="spendings" name="spendings_2_3"><br><br>
+
+ </fieldset>
+
+    <fieldset>
+  <legend>Среда:</legend>
+  <label for="type_of_spendings">Статья расходов:</label>
+  <input type="text" id="type_of_spendings" name="type_of_spendings_3_1">
+  <label for="spendings">Сумма расходов:</label>
+  <input type="number" id="spendings" name="spendings_3_1"><br><br>
+  <label for="type_of_spendings">Статья расходов:</label>
+  <input type="text" id="type_of_spendings" name="type_of_spendings_3_2">
+  <label for="spendings">Сумма расходов:</label>
+  <input type="number" id="spendings" name="spendings_3_2"><br><br>
+  <label for="type_of_spendings">Статья расходов:</label>
+  <input type="text" id="type_of_spendings" name="type_of_spendings_3_3">
+  <label for="spendings">Сумма расходов:</label>
+  <input type="number" id="spendings" name="spendings_3_3"><br><br>
+
+ </fieldset>
+
+        <fieldset>
+  <legend>Четверг:</legend>
+  <label for="type_of_spendings">Статья расходов:</label>
+  <input type="text" id="type_of_spendings" name="type_of_spendings_4_1">
+  <label for="spendings">Сумма расходов:</label>
+  <input type="number" id="spendings" name="spendings_4_1"><br><br>
+  <label for="type_of_spendings">Статья расходов:</label>
+  <input type="text" id="type_of_spendings" name="type_of_spendings_4_2">
+  <label for="spendings">Сумма расходов:</label>
+  <input type="number" id="spendings" name="spendings_4_2"><br><br>
+  <label for="type_of_spendings">Статья расходов:</label>
+  <input type="text" id="type_of_spendings" name="type_of_spendings_4_3">
+  <label for="spendings">Сумма расходов:</label>
+  <input type="number" id="spendings" name="spendings_4_3"><br><br>
+
+ </fieldset>
+
+    <fieldset>
+  <legend>Пятница:</legend>
+  <label for="type_of_spendings">Статья расходов:</label>
+  <input type="text" id="type_of_spendings" name="type_of_spendings_5_1">
+  <label for="spendings">Сумма расходов:</label>
+  <input type="number" id="spendings" name="spendings_5_1"><br><br>
+  <label for="type_of_spendings">Статья расходов:</label>
+  <input type="text" id="type_of_spendings" name="type_of_spendings_5_2">
+  <label for="spendings">Сумма расходов:</label>
+  <input type="number" id="spendings" name="spendings_5_2"><br><br>
+  <label for="type_of_spendings">Статья расходов:</label>
+  <input type="text" id="type_of_spendings" name="type_of_spendings_5_3>
+  <label for="spendings">Сумма расходов:</label>
+  <input type="number" id="spendings" name="spendings_5_3"><br><br>
+
+ </fieldset>
+
+
+<fieldset id="spendingsContainer">
+ <legend>Понедельник:</legend>
+ <label for="type_of_spendings">Статья расходов:</label>
+ <input type="text" id="type_of_spendings" name="type_of_spendings_1_1">
+ <label for="spendings">Сумма расходов:</label>
+ <input type="number" id="spendings" name="spendings_1_1"><br><br>
+</fieldset>
+
+<button id="addSpendingsBtn">Add Spendings</button>
+
+<script>
+const addSpendingsBtn = document.getElementById("addSpendingsBtn");
+const spendingsContainer = document.getElementById("spendingsContainer");
+let counter = 1;
+
+addSpendingsBtn.addEventListener("click", function(event) {
+  event.preventDefault();
+  counter++;
+  const spendings = document.createElement("fieldset");
+  spendings.innerHTML = `
+    <label for="type_of_spendings">Статья расходов:</label>
+    <input type="text" id="type_of_spendings" name="type_of_spendings_${counter}_1">
+    <label for="spendings">Сумма расходов:</label>
+    <input type="number" id="spendings" name="spendings_${counter}_1"><br><br>
+  `;
+  spendingsContainer.appendChild(spendings);
+});
+</script>
+
+
+
+
+
+
+
+  <input type="submit" value="Отправить">
+</form>
+
+
+{#    <fieldset id="spendingsContainer">#}
+{# <legend>Понедельник:</legend>#}
+{# <label for="type_of_spendings">Статья расходов:</label>#}
+{# <input type="text" id="type_of_spendings" name="type_of_spendings_1_1">#}
+{# <label for="spendings">Сумма расходов:</label>#}
+{# <input type="number" id="spendings" name="spendings_1_1"><br><br>#}
+{#</fieldset>#}
+{##}
+{#<button id="addSpendingsBtn">Add Spendings</button>#}
+{##}
+{#<script>#}
+{#const addSpendingsBtn = document.getElementById("addSpendingsBtn");#}
+{#const spendingsContainer = document.getElementById("spendingsContainer");#}
+{#let counter = 1;#}
+{##}
+{#addSpendingsBtn.addEventListener("click", function() {#}
+{#  counter++;#}
+{#  const spendings = document.createElement("fieldset");#}
+{#  spendings.innerHTML = `#}
+{#    <label for="type_of_spendings">Статья расходов:</label>#}
+{#    <input type="text" id="type_of_spendings" name="type_of_spendings_${counter}_1">#}
+{#    <label for="spendings">Сумма расходов:</label>#}
+{#    <input type="number" id="spendings" name="spendings_${counter}_1"><br><br>#}
+{#  `;#}
+{#  spendingsContainer.appendChild(spendings);#}
+{#});#}
+{#</script>#}
+
+
+</center>
+</body>
+</html>

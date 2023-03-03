@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Landing Page</title>
+  </head>
+  <body>
+
+ {% if plan_sum %}
+        <p>За неделю {{ week_summary }} по проекту {{ project }} было запланировано расходов на {{ plan_sum }}.</p>
+    {% endif %}
+    {% if fact_sum %}
+       <p> Фактически потрачено: {{ fact_sum }}</p>
+{% endif %}
+
+  </body>
+</html>

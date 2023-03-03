@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>FlaskApp</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+<center>
+<h1>Отчёт за день</h1>
+<form method="post">
+
+
+<input type="hidden" name="project" value="{{ project }}">
+    <input type="hidden" name="week" value="{{ week }}">
+
+    <br>
+ <fieldset>
+   <legend>Понедельник:</legend>
+       {%for i in line%}
+{% if i.day == 1 %}
+<label for="spendings">Статья расходов:</label>
+  <input value="{{ i.spendings }}" type="text" id="spendings" name="type_of_spendings_1_{{ loop.index }}">
+     <label for="sum_of_spendings">Сумма расходов:</label>
+  <input value="{{ i.sum_of_spendings }}" type="number" id="sum_of_spendings" name="spendings_1_{{ loop.index }}">
+      <label for="notation">Комментарий</label>
+  <input value="{{ i.notation }}" type="text" id="notation" name="notation_1_{{ loop.index }}">
+    <br>
+    {% endif %}
+       {%endfor%}
+    <legend>Вторник:</legend>
+        {%for i in line%}
+{% if i.day == 2 %}
+<label for="spendings">Статья расходов:</label>
+  <input value="{{ i.spendings }}" type="text" id="spendings" name="type_of_spendings_2_{{ loop.index - 3 }}">
+     <label for="sum_of_spendings">Сумма расходов:</label>
+  <input value="{{ i.sum_of_spendings }}" type="number" id="sum_of_spendings" name="spendings_2_{{ loop.index - 3 }}">
+      <label for="notation">Комментарий</label>
+  <input value="{{ i.notation }}" type="text" id="notation" name="notation_2_{{ loop.index - 3 }}">
+    <br>
+    {% endif %}
+       {%endfor%}
+    <legend>Среда:</legend>
+        {%for i in line%}
+{% if i.day == 3 %}
+<label for="spendings">Статья расходов:</label>
+  <input value="{{ i.spendings }}" type="text" id="spendings" name="type_of_spendings_3_{{ loop.index - 6 }}">
+     <label for="sum_of_spendings">Сумма расходов:</label>
+  <input value="{{ i.sum_of_spendings }}" type="number" id="sum_of_spendings" name="spendings_3_{{ loop.index - 6 }}">
+      <label for="notation">Комментарий</label>
+  <input value="{{ i.notation }}" type="text" id="notation" name="notation_3_{{ loop.index - 6 }}">
+    <br>
+    {% endif %}
+       {%endfor%}
+    <legend>Четверг:</legend>
+        {%for i in line%}
+{% if i.day == 4 %}
+<label for="spendings">Статья расходов:</label>
+  <input value="{{ i.spendings }}" type="text" id="spendings" name="type_of_spendings_4_{{ loop.index - 9 }}">
+     <label for="sum_of_spendings">Сумма расходов:</label>
+  <input value="{{ i.sum_of_spendings }}" type="number" id="sum_of_spendings" name="spendings_4_{{ loop.index - 9 }}">
+      <label for="notation">Комментарий</label>
+  <input value="{{ i.notation }}" type="text" id="notation" name="notation_4_{{ loop.index - 9 }}">
+    <br>
+    {% endif %}
+       {%endfor%}
+    <legend>Пятница:</legend>
+        {%for i in line%}
+{% if i.day == 5 %}
+<label for="spendings">Статья расходов:</label>
+  <input value="{{ i.spendings }}" type="text" id="spendings" name="type_of_spendings_5_{{ loop.index - 12 }}">
+     <label for="sum_of_spendings">Сумма расходов:</label>
+  <input value="{{ i.sum_of_spendings }}" type="number" id="sum_of_spendings" name="spendings_5_{{ loop.index - 12 }}">
+      <label for="notation">Комментарий</label>
+  <input value="{{ i.notation }}" type="text" id="notation" name="notation_5_{{ loop.index - 12 }}">
+    <br>
+    {% endif %}
+       {%endfor%}
+  <input type="submit" value="Отправить">
+</form>
+
+</center>
+</body>
+</html>

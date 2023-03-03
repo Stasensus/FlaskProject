@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Изменить данные</title>
+  </head>
+  <body>
+  <center>
+      <br>
+            <br>
+            <br>
+<form  method="post">
+  <input type="hidden" name="id" value="{{line.id}}">
+    <label for="project">Проект:</label>
+  <input value="{{ line.project }}" list="projects" name="project" id="project">
+    <br>
+      <label for="week">Порядковый номер недели</label>
+  <input value="{{ line.week }}" type="text" id="week" name="week">
+    <br>
+  <label for="day">Порядковый номер дня недели</label>
+  <input value="{{ line.day }}"  type="text" id="day" name="day">
+    <br>
+      <label for="plan_fact">План или отчет</label>
+  <input value="{{ line.plan_fact }}" type="text" id="plan_fact" name="plan_fact">
+    <br>
+  <label for="spendings">Статья расходов:</label>
+  <input value="{{ line.spendings }}" type="text" id="spendings" name="spendings">
+    <br>
+     <label for="sum_of_spendings">Сумма расходов:</label>
+  <input value="{{ line.sum_of_spendings }}" type="number" id="sum_of_spendings" name="sum_of_spendings">
+    <br>
+      <label for="notation">Комментарий</label>
+  <input value="{{ line.notation }}" type="text" id="notation" name="notation">
+    <br>
+  <input type="submit" value="Отправить">
+  </center>
+
+
+
+</form>
+  </body>
+</html>

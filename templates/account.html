@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>FlaskApp</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+<center>
+<h1>Добро пожаловать в личный кабинет</h1>
+    <br>
+    <table cellspacing="1" cellpadding="1">
+        <tr>
+            <td>
+                <center>                <form action="{{ url_for('account_plan') }}">
+                    <label for="project">Проект:</label>
+  <input list="projects" name="project" id="project">
+    <datalist id="projects">
+      <option value="Mantera">
+      <option value="Красная поляна">
+      <option value="Санаторий Знание">
+      <option value="Морпорт">
+      <option value="Аэропорт">
+    </datalist>
+<label for="week">Неделя:</label>
+  <input list="weeks" name="week" id="week" required>
+    <datalist id="weeks">
+      <option value="02.01 - 07.01">
+      <option value="09.01 - 13.01">
+      <option value="16.01 - 20.01">
+      <option value="23.01 - 27.01">
+    </datalist>
+
+  <h4>Создать план на неделю:</h4>
+                    <input type="submit" value="План!">
+                    </form>
+            </center>
+            </td>
+            <td>
+                <center>                <form action="{{ url_for('account_report') }}">
+                                            <label for="project">Проект:</label>
+  <input list="projects" name="project" id="project">
+    <datalist id="projects">
+      <option value="Mantera">
+      <option value="Красная поляна">
+      <option value="Санаторий Знание">
+      <option value="Морпорт">
+      <option value="Аэропорт">
+    </datalist>
+<label for="week">Неделя:</label>
+  <input list="weeks" name="week" id="week" required>
+    <datalist id="weeks">
+      <option value="02.01 - 07.01">
+      <option value="09.01 - 13.01">
+      <option value="16.01 - 20.01">
+      <option value="23.01 - 27.01">
+    </datalist>
+
+  <h4>Создать отчёт за день:</h4>
+                    <input type="submit" value="Отчёт!">
+                    </form>
+                    </center>
+            </td>
+        </tr>
+
+    </table>
+
+
+</center>
+</body>
+</html>
